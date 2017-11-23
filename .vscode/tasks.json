@@ -4,12 +4,12 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Prepare",
+			"label": "Build System: Configure",
 			"type": "shell",
 			"command": "cmake ."
 		},
 		{
-			"label": "Build",
+			"label": "Build System: Build",
 			"type": "shell",
 			"command": "ninja",
 			"group": {
@@ -18,7 +18,7 @@
 			}
 		},
 		{
-			"label": "Unit Tests",
+			"label": "Build System: Unit Tests",
 			"type": "shell",
 			"command": "ninja utests",
 			"group": {
@@ -26,5 +26,21 @@
 				"isDefault": true
 			}
 		},
+		{
+			"label": "Version Control: Sync",
+			"type": "shell",
+			"command": "repo sync",
+			"problemMatcher": []
+		},
+		{
+			"label": "Version Control: Change to dev branch",
+			"type": "shell",
+			"command": "repo forall -c repo start dev ."
+		},
+		{
+			"label": "Version Control: Change to master branch",
+			"type": "shell",
+			"command": "repo forall -c repo start master ."
+		}
 	]
 }
