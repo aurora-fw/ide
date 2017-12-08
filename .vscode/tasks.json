@@ -6,12 +6,12 @@
 		{
 			"label": "Build System: Configure (GNU)",
 			"type": "shell",
-			"command": "cmake ."
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -DAURORA_BUILD_TEST_APPS=ON ."
 		},
 		{
 			"label": "Build System: Configure (Ninja)",
 			"type": "shell",
-			"command": "cmake -GNinja ."
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -GNinja -DAURORA_BUILD_TEST_APPS=ON ."
 		},
 		{
 			"label": "Build System: Build (GNU)",
