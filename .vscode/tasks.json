@@ -4,12 +4,22 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build System: Configure",
+			"label": "Build System: Configure (GNU)",
 			"type": "shell",
 			"command": "cmake ."
 		},
 		{
-			"label": "Build System: Build",
+			"label": "Build System: Configure (Ninja)",
+			"type": "shell",
+			"command": "cmake -GNinja ."
+		},
+		{
+			"label": "Build System: Build (GNU)",
+			"type": "shell",
+			"command": "make"
+		},
+		{
+			"label": "Build System: Build (Ninja)",
 			"type": "shell",
 			"command": "ninja",
 			"group": {
@@ -18,7 +28,7 @@
 			}
 		},
 		{
-			"label": "Build System: Unit Tests",
+			"label": "Build System: Unit Tests (Ninja)",
 			"type": "shell",
 			"command": "ninja utests",
 			"group": {
