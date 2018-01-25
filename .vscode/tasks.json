@@ -2,30 +2,43 @@
 	// See https://go.microsoft.com/fwlink/?LinkId=733558
 	// for the documentation about the tasks.json format
 	"version": "2.0.0",
+	"presentation": {
+		"reveal": "silent"
+	},
 	"tasks": [
 		{
 			"label": "Build System: Configure (GNU)",
 			"type": "shell",
-			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -DAURORA_BUILD_TEST_APPS=ON ."
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -DAURORA_BUILD_TEST_APPS=ON .",
+			"problemMatcher": []
 		},
 		{
 			"label": "Build System: Configure (Ninja)",
 			"type": "shell",
-			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -GNinja -DAURORA_BUILD_TEST_APPS=ON ."
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -GNinja -DAURORA_BUILD_TEST_APPS=ON .",
+			"problemMatcher": []
 		},
 		{
 			"label": "Build System: Build (GNU)",
 			"type": "shell",
-			"command": "make"
-		},
-		{
-			"label": "Build System: Build (Ninja)",
-			"type": "shell",
-			"command": "ninja",
+			"linux": {
+				"command": "make -j8"
+			},
+			"windows": {
+				"command": "bash -c mingw32-make.exe -j8"
+			},
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Build System: Build (Ninja)",
+			"type": "shell",
+			"command": "ninja -j8",
 			"problemMatcher": [
 				"$gcc"
 			]
@@ -38,6 +51,12 @@
 				"kind": "test",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "Build System: Clean",
+			"type": "shell",
+			"command": "rm -f CMakeCache.txt && rm -rf CMakeFiles/",
+			"problemMatcher": []
 		},
 		{
 			"label": "Version Control: Sync",
