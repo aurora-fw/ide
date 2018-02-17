@@ -6,6 +6,7 @@
 			"type": "gdb",
 			"request": "launch",
 			"target": "./bin/dbg/aurorafw_app_tests_audio.out",
+			"arguments": "-o ./apps/tests/audio/rsrc/example.ogg",
 			"cwd": "${workspaceRoot}"
 		},
 		{
