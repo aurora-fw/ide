@@ -57,6 +57,7 @@
         "__config": "cpp",
         "__nullptr": "cpp",
         "*.ipp": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "algorithm": "cpp"
     }
 }
