@@ -59,5 +59,6 @@
         "*.ipp": "cpp",
         "string": "cpp",
         "algorithm": "cpp"
-    }
+    },
+    "d.betaStream": true
 }
